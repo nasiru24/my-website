@@ -79,12 +79,11 @@ body{
     align-items: center;
     justify-content: center;
     background-color: black;
-    padding-top: 80px;
 }
 
 .hero{
     color: whitesmoke;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Geneva, sans-serif;
     align-items: center;
     justify-content: center;
 }
