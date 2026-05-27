@@ -20,3 +20,32 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
         const userName=prompt("What's your name?","Guest");
     output.textContent="Hello,"+userName+"!";
     });
+
+    /*Form Filling*/
+
+    const form=document.querySelector("form");
+    form.addEventListener("submit",async function(e){
+        e.preventDefault();
+        const formData=new FormData(form);
+        const response=await fetch(form.action, {
+            method:"POST",
+            body:formData
+        });
+
+        if(response.ok){alert("Message sent successfully!");
+            form.reset();
+        }
+        else{
+            ("Something went wrong.");
+    }
+});
+
+
+
+
+
+
+
+
+
+
