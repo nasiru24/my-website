@@ -10,12 +10,6 @@ html{
     scroll-behavior: smooth;
 }
 
-header{
-    background-color:green;
-    background-position: center;
-    background-size:cover;
-    width:100%;
-}
 
 li{
     list-style: none;
@@ -27,19 +21,17 @@ a{
 }
 
 .navbar{
-   background-position: center;
     top: 0;
-    width: 100%;
+    width:100%;
     background: blue;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     z-index: 1000;
-    min-height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    margin: 0;
+    padding:20px;
+    margin:0;
 }
 
 .nav-menu{
@@ -51,14 +43,15 @@ a{
 
 .nav-branding{
     font-size: 2rem;
-    color: white;
-    border-radius: 10px;
-    transform: rotateY('angle');
+    color:green;
+    border-radius: 20px;
+    transform: rotateY(45 deg);
+    transition: 0.5s;
 }
 
 .nav-link{
     transition: 0.5s ease;
-    size: 28px;
+    size: 30px;
 }
 
 .nav-link:hover{
@@ -86,11 +79,7 @@ body{
     align-items: center;
     justify-content: center;
     background: #07132b;
-    font-family: 'Segoe UI',sans-serif;
-    max-width: 1000px;
     font-family: 'Fira Code',monospace;
-    margin: 0;
-    padding: 0;
 }
 
 h2{
@@ -120,29 +109,25 @@ p{
     color: whitesmoke;
     align-items: center;
     justify-content: center;
-    display: inline-block;
-    margin: 0;
-    background: green;
+    display:inline-block;
+    background: blue;
     background-position: center;
     background-size: cover;
-    width:100%;
+    width: 100%;
 }
 
 .hero-content{
     font-family: 'Fira Code',monospace;
     align-content: center;
-    font-size: 18px;
-    justify-content: justify;
-    margin:0 auto;
-    max-width: 900px;
-    padding: 20px 15px;
+    font-size: 20px;
+    justify-content: center;
     color: whitesmoke;
-    width:100%;
+    width: 100%;
 }
 
 .name{
     text-align: center;
-    color:blue;
+    color:green;
     transition:0.5s ;
     font-weight: bold;
     font-size: 42px;
@@ -158,24 +143,21 @@ p{
 }
 
 section{
-    padding: 20px 5px;
-    width:100%;
+    padding: 20px 15px;
 }
 
 .btn{
     border: none;
     cursor: pointer;
-    display: flex;
-    background: blue;
+    display: inline-block;
+    background: green;
     color:white;
     font-weight: bold;
     border-radius: 7px;
-    margin:15px  auto;
-    align-content: center;
+    margin:30px  80px;
+    align-items: center;
     justify-content: center;
-    width: 40%;
-    height:auto;
-    padding-right: 20px;
+    padding: 18px 350px;
 }
 
 .btn:hover{
@@ -189,8 +171,6 @@ section{
     justify-content: center;
     font-weight: lighter;
     background: #07132b;
-    width:100%:
-    margin:0;
 }
 
 .title{
@@ -211,54 +191,45 @@ section{
     font-size: 18px;
     margin:0 auto;
     padding: 30px 20px;
-    width:100%;
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    gap: 15px;
     flex-grow: 1;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 100vh;
-    background: #07132b;
-    padding:20px 12px;
-    gap: 40px;
 }
-
 
 .project-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    align-content:center;
+    gap: 15px;
 }
 
 .project{
     background: #07132b;
-    width:100%;
 }
 
 .card{
-    padding: 0;
-    background: blue;
+    padding: 5px;
+    background:white;
+    margin:0 auto;
     overflow: hidden;
-    gap: 20px;
-    border-color: white;
+    width: 80%;
+    height: 80%;
+    gap: 15px;
+    border-color: blue;
     transition: 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px black;
     align-items: center;
     justify-content: center;
-    display: grid;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto 40px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: inline-block;
 }
-
 
 .card:hover{
     transform: translateY(-10px);
@@ -267,100 +238,96 @@ section{
 i{
     font-size: 28px;
     margin-bottom: 15px;
-    color:green;
+    color:black;
 }
 
 .skill{
     background: #07132b;
-    width:100%:
 }
 
 .skill-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    width:100%;
 }
 
 .services{
     background: #07132b;
-    width:100%;
+    display: block;
 }
 
 .services-content{
-    align-content: center;
+    align-items: center;
     justify-content: center;
     margin:0 auto;
-    padding: 20px 10px;
+    padding:5px;
     font-weight: bolder; 
     color: whitesmoke;
     font-family: 'Fira Code',monospace;
-    max-width: 1000px;
     font-size: 18px;
 }
 
 .contact{
     width: 100%;
     margin: 0 auto;
-    padding:40px 24px;
+    padding:5px;
     background: #f5f5f5;
-    background-position: fixed;
+    background-position: center;
     background-size: cover;
+    display: block;
 }
 
 img{
-    padding: 20px;
+    width:80%;
+    height: 80%;
     object-fit: cover;
-    align-content: center;
-    justify-content:center;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    justify-content:center ;
+    padding: 5px;
+    margin: 0 auto;
     display: flex;
-}
 
-.image{
-    height: 420px;
-    overflow: hidden;
 }
 
 .subtitle{
     text-align: center;
     color: lightblue;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h3{
     text-align: center;
     font-size:22px;
     line-height: 1.2;
-    color: #111;
+    margin-bottom: 22px;
     font-weight: 700;
-    margin-top: 20px;
 }
 
 .contact-form{
-    display: flex;
+    display: block;
     flex-direction: column;
-    gap: 24px;
-    width:100%;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #f5f5f5;
 }
 
 .contact-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    width:100%;
 }
 
 .icon{
-    width: 60px;
-    height: 60px;
-    color: #2563eb;
+    width: 200px;
+    background:white;
+    color:black;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 24px;
 }
 
@@ -368,25 +335,44 @@ h3{
     align-content: center;
     justify-content: center;
     color:black;
-    padding: 10px 10px;
+    padding:5px;
     font-family: 'Fira code',monospace;
     font-weight: bold;
-    margin:0;
-    width:100%;
+    margin:0 auto;
+    background: #f5f5f5;
 }
 
 input,textarea{
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 20px;
+    width: 90%;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 7px;
     color:black;
-    margin: 10px auto;
+    margin: 0 auto;
     background: white;
-    font-size: 18px;
+    font-size: 20px;
     outline: none;
+}
+
+/*CONTACT CARD*/
+
+.card{
+    padding: 5px;
+    background:white;
+    margin:0 auto;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    gap: 15px;
+    border-color: blue;
+    transition: 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px black;
+    align-items: center;
+    justify-content: center;
+    display:block;
 }
 
 textarea{
@@ -408,11 +394,12 @@ input{
     font-family:'Segoe UI',Verdana, sans-serif;
     font-weight: bolder;
     font-size: 24px;
-    background: green;
+    background: blue;
     margin:0 auto;
-    padding: 5px 5px;
-    background-size:cover;
+    padding: 5px;
+    background-size: cover;
     width:100% ;
+    display: inline-block;
 }
 
 label{
@@ -420,12 +407,14 @@ label{
     font-family: 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     padding-right: 80px;
+    align-items: center;
 }
 
 .checkbox{
-    color: blue;
-    padding-left: 80px;
-    padding-bottom: 60px;
+    color: green;
+    padding-left: 60px;
+    padding-bottom: 80px;
+    align-items: center;
 }
 
 
@@ -544,7 +533,7 @@ input,textarea{
 }
 
 body{
-width: 100%;
+    width: 100%;
     max-width: 700px;
     margin: 0 auto;
     padding: 0 24px;
