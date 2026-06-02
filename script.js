@@ -40,6 +40,7 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     }
 });
 
+    document.body.classList.toggle("dark");
 
 
 

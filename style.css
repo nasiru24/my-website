@@ -23,15 +23,15 @@ a{
 .navbar{
     top: 0;
     width:100%;
-    background: blue;
+    background: #000;;
     background-size: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:20px;
-    margin:0;
+    margin:0 auto;
 }
 
 .nav-menu{
@@ -42,16 +42,16 @@ a{
 }
 
 .nav-branding{
-    font-size: 2rem;
-    color:green;
+    padding: 2px;
     border-radius: 20px;
     transform: rotateY(45 deg);
     transition: 0.5s;
+    width: 65px;
 }
 
 .nav-link{
     transition: 0.5s ease;
-    size: 30px;
+    size: 40px;
 }
 
 .nav-link:hover{
@@ -83,10 +83,10 @@ body{
 }
 
 h2{
-    color:white;
+    color:green;
     font-size: 28px;
     letter-spacing:3px ;
-    margin-bottom: 42px;
+    margin-bottom: 45px;
     text-align: center;
     line-height: 1.2;
     font-weight: 700;
@@ -98,10 +98,11 @@ p{
     line-height: 1.8;
     margin-bottom: 32px;
     font-family: 'Fira Code',monospace;
+    max-width: fit-content;
 }
 
 .highlight{
-    color:lightblue;
+    color:lightgreen;
     font-weight: 700;
 }
 
@@ -110,19 +111,20 @@ p{
     align-items: center;
     justify-content: center;
     display:inline-block;
-    background: blue;
-    background-position: center;
+    background: #003;
     background-size: cover;
     width: 100%;
+    max-width: fit-content;
 }
 
 .hero-content{
     font-family: 'Fira Code',monospace;
     align-content: center;
-    font-size: 20px;
+    font-size: 28px;
     justify-content: center;
     color: whitesmoke;
     width: 100%;
+    max-width: fit-content;
 }
 
 .name{
@@ -143,7 +145,8 @@ p{
 }
 
 section{
-    padding: 20px 15px;
+    padding: 25px 20px;
+    margin:0 auto;
 }
 
 .btn{
@@ -174,7 +177,7 @@ section{
 }
 
 .title{
-    color: white;
+    color: green;
     text-align: center;
     transition:0.5s ;
     font-weight: bold;
@@ -187,25 +190,24 @@ section{
     align-content: center;
     justify-content:center;
     font-family: 'Fira Code',monospace;
-    max-width: 900px;
+    max-width: fit-content;
     font-size: 18px;
     margin:0 auto;
     padding: 30px 20px;
 }
 
 .container{
-    display: flex;
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     flex-grow: 1;
     flex-wrap: wrap;
     width: 100%;
+    background: #003;
 }
 
 .project-grid{
-    display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 15px;
 }
@@ -221,14 +223,13 @@ section{
     overflow: hidden;
     width: 80%;
     height: 80%;
-    gap: 15px;
-    border-color: blue;
+    gap: 20px;
     transition: 0.3s;
     border-radius: 10px;
     box-shadow: 0 2px 3px black;
     align-items: center;
     justify-content: center;
-    display: inline-block;
+    display: grid;
 }
 
 .card:hover{
@@ -237,8 +238,9 @@ section{
 
 i{
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color:black;
+    gap: 20px;
 }
 
 .skill{
@@ -246,14 +248,14 @@ i{
 }
 
 .skill-grid{
-    display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .services{
     background: #07132b;
-    display: block;
+    width: 100%;
+    display: grid;
 }
 
 .services-content{
@@ -265,6 +267,8 @@ i{
     color: whitesmoke;
     font-family: 'Fira Code',monospace;
     font-size: 18px;
+    width: 80%;
+    height: 80%;
 }
 
 .contact{
@@ -274,18 +278,21 @@ i{
     background: #f5f5f5;
     background-position: center;
     background-size: cover;
-    display: block;
+    display: inline-block;
+    gap: 20px;
 }
 
 img{
-    width:80%;
-    height: 80%;
     object-fit: cover;
     align-items: center;
     justify-content:center ;
     padding: 5px;
     margin: 0 auto;
     display: flex;
+    width: auto;
+    height: fit-content;
+    width: 100%;
+    height: 100%;
 
 }
 
@@ -305,17 +312,15 @@ h3{
 }
 
 .contact-form{
-    display: block;
+    display: grid;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #f5f5f5;
 }
 
 .contact-grid{
-    display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
@@ -329,6 +334,7 @@ h3{
     justify-content: center;
     border-radius: 7px;
     font-size: 24px;
+    gap: 20px;
 }
 
 .contact-content{
@@ -340,6 +346,7 @@ h3{
     font-weight: bold;
     margin:0 auto;
     background: #f5f5f5;
+    display: inline-block;
 }
 
 input,textarea{
@@ -359,20 +366,18 @@ input,textarea{
 /*CONTACT CARD*/
 
 .card{
-    padding: 5px;
     background:white;
     margin:0 auto;
     overflow: hidden;
-    width: 80%;
-    height: 80%;
-    gap: 15px;
-    border-color: blue;
+    width: 60%;
+    height: 70%;
+    gap: 20px;
     transition: 0.3s;
     border-radius: 10px;
     box-shadow: 0 2px 3px black;
     align-items: center;
     justify-content: center;
-    display:block;
+    display:grid;
 }
 
 textarea{
@@ -394,27 +399,25 @@ input{
     font-family:'Segoe UI',Verdana, sans-serif;
     font-weight: bolder;
     font-size: 24px;
-    background: blue;
+    background: #000;
     margin:0 auto;
     padding: 5px;
     background-size: cover;
     width:100% ;
-    display: inline-block;
 }
 
 label{
     color: black;
     font-family: 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
-    padding-right: 80px;
+    padding-right: 0;
     align-items: center;
 }
 
 .checkbox{
     color: green;
-    padding-left: 60px;
-    padding-bottom: 80px;
     align-items: center;
+    padding: 40px 10px;
 }
 
 
@@ -426,7 +429,7 @@ label{
 
 .hamburger.active .bar:nth-child(2){
     opacity: 0;
-    width: 22px;
+    width: 25px;
 }
 
 .hamburger.active .bar:nth-child(1){
@@ -436,12 +439,12 @@ label{
 
 .hamburger.active .bar:nth-child(3){
     transform: translateY(-8px)rotate-(45deg);
-    width: 14px;
+    width: 20px;
 }
 
 .hamburger:hover span:nth-child(2),
 .hamburger:hover span:nth-child(3){
-    width: 30px;
+    width: 20px;
 }
 
 .nav-menu{
@@ -450,7 +453,7 @@ label{
     top:70px;
     gap: 0;
     flex-direction: column;
-    background-color:blue;
+    background-color:green;
     width:100%;
     text-align: center;
     justify-content: center;
@@ -465,9 +468,15 @@ label{
 }
 
 section{
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 25px 35px;
 }
+
+.services{
+    background: #07132b;
+    width: 100%;
+    display: inline-block;
+}
+
 .name{
     font-size: 34px;
 }
@@ -475,6 +484,7 @@ section{
 p{
     font-size: 17px;
 }
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -482,33 +492,43 @@ p{
 }
 
 .btn{
-    display:inline;
-    height: 30%;
-    width: 45%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    background: green;
+    color:white;
+    font-weight: bold;
+    border-radius: 7px;
+    margin:20px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 150px;
 }
 
 .skill-grid{
     grid-template-columns: 1fr;
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0;
+    gap: 20px;
 }
 
 .project-grid{
     grid-template-columns: 1fr;
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px;   
+    padding: 0;
+    gap: 20px;   
 }
 
 .contact-grid{
     grid-template-columns: 1fr;
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0;
 }
 
 input,textarea{
@@ -518,25 +538,40 @@ input,textarea{
 }
 
 .contact{
-    padding: 32px 20px;
+    padding:auto;
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
+    display: inline-block;
+    gap: 20px;
+}
+
+.contact-content{
+    background:#f5f5f5;
+    gap: 20px;
+    width: 50%;
+    height: 70%;
 }
 
 .container{
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
-    max-width: 700px;
     margin: 0 auto;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    background: #003;
+    gap: 20px;
 }
+
 
 body{
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0;
 }
 
 }
