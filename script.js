@@ -40,7 +40,19 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     }
 });
 
+/*CARDS ANIMATION*/
+
     document.body.classList.toggle("dark");
+
+    const cards=document.querySelectorAll(".card");
+    cards.forEach(card=>{
+        card.addEventListener("mouseenter",()=>{
+            card.style.transform="translateY(-10px)";
+        });
+        card.addEventListener("mouseenter",()=>{
+            card.style.transform="translateY(0)";
+        });
+    });
 
 
 
