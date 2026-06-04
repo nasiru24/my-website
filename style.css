@@ -87,7 +87,7 @@ body{
     background-repeat: no-repeat;
 }
 
-br{
+span{
     color: linear-gradient(180deg,#3b8887 0%,#2f8d91 50%,#18a9b8 100%);
     font-size: 28px;
     padding-bottom: 10px;
@@ -99,18 +99,18 @@ p{
     line-height: 1.8;
     margin-bottom: 32px;
     font-family: 'Fira Code',monospace;
-    max-width: 1100px;
+    max-width: 1200px;
 }
 
 section{
-    padding: 28px 35px;
+    padding: 20px 45px;
     margin: auto;
 }
 
 i{
     font-size: 28px;
-    gap: 20px;
-    color: linear-gradient(180deg,#3b8887 0%,#2f8d91 50%,#18a9b8 100%);
+    gap: 15px;
+    color: blue;
     display: flex;
     text-align: center;
     justify-content: center;
