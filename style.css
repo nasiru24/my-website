@@ -433,15 +433,18 @@ a.btn{
 
 .contact-card{
     background: #07132b;
+    display:flex;  
     border-radius: 10px;
     text-align: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     overflow: hidden;
-    width: 70%;
-    height: 80%;
+    width: 92%;
+    min-height: 340px;
     transition: 0.3s ease;
     gap: 20px;
+    padding:3rem 2rem;
+    flex-direction:column;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -513,206 +516,206 @@ input{
 
 /*ICONS*/
 
-.fa-solid fa-hand{
+.fa-hand{
     width: 20%;
     color: aqua;
     margin: auto;
 }
 
 
-.fa-solid fa-person{
+.fa-person{
     width: 20%;
     color: burlywood;
     margin: auto;
 }
 
-.fa-solid fa-list{
+.fa-list{
     width: 20%;
     color: blue;
     margin: auto;
 }
 
-.fa-solid fa-globe{
+.fa-globe{
     width: 20%;
     color: blue;
     margin: auto;
 }
 
-.far fa-calculator{
+.fa-calculator{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fas fa-door-open{
+.fa-door-open{
     width: 20%;
     color: aqua;
     margin: auto;
 }  
 
-.fas  fa-cart-shopping{
+.fa-cart-shopping{
     width: 20%;
     color: aqua;
     margin: auto;
 }
 
-.far fa-pen-to-square{
+.fa-pen-to-square{
     width: 20%;
     color: blue;
     margin: auto;
 }
 
-.fas fa-robot{
+.fa-robot{
     width: 20%;
     color: aqua;
     margin: auto;
 }
 
-.fab fa-js{
+.fa-js{
     width: 20%;
     color: yellow;
     margin: auto;
 }
 
-.fab fa-html5{
+.fa-html5{
     width: 20%;
     color: yellowgreen;
     margin: auto;
 }
-.fab fa-css3-alt{
+.fa-css3-alt{
     width: 20%;
     color: yellowgreen;
     margin: auto;
 }
 
-.fab fa-python{
+.fa-python{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.far fa-chart-line{
+.fa-chart-line{
     width: 20%;
     color:burlywood;
     margin: auto;
 }
 
-.fas fa-square-root-variable{
+.fa-square-root-variable{
     width: 20%;
     color:burlywood;
     margin: auto;
 }
 
-.fas fa-shapes{
+.fa-shapes{
     width: 20%;
     color:yellowgreen;
     margin: auto;
 }
 
-.fas fa-screwdriver-wrench{
+.fa-screwdriver-wrench{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-git-alt{
+.fa-git-alt{
     width: 20%;
     color:red;
     margin: auto;
 }
 
-.fas fa-code{
+.fa-code{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-github{
+.fa-github{
     width: 20%;
     color:violet;
     margin: auto;
 }
 
-.fas fa-globe{
+.fa-globe{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-python{
+.fa-python{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fas fa-mobile-screen-button{
+.fa-mobile-screen-button{
     width: 20%;
     color:burlywood;
     margin: auto;
 }
 
 
-.fa-solid fa-lock{
+.fa-lock{
     width: 20%;
     color:yellowgreen;
     margin: auto;
 }
 
-.fa-solid fa-palette{
+.fa-palette{
     width: 20%;
     color:yellow;
     margin: auto;
 }
 
-.fa-solid fa-circle-user{
+.fa-circle-user{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fas fa-envelope{
+.fa-envelope{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-whatsapp{
+.fa-whatsapp{
     width: 20%;
     color:green;
     margin: auto;
 }
 
-.fas fa-phone{
+.fa-phone{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-facebook{
+.fa-facebook{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fab fa-square-instagram{
+.fa-square-instagram{
     width: 20%;
     color:palevioletred;
     margin: auto;
 }
 
-.fa-brands fa-linkedin{
+.fa-linkedin{
     width: 20%;
     color:blue;
     margin: auto;
 }
 
-.fa-brands fa-github{
+.fa-github{
     width: 20%;
     color:violet;
     margin: auto;
 }
 
-.fa-solid fa-business-time{
+.fa-business-time{
     width: 20%;
     color: blue;
     margin: auto;
