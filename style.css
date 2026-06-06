@@ -339,6 +339,7 @@ h2{
 }
 
 .container i span{
+    display: flex;
     text-align: center;
     justify-content: center;
     color: white;
@@ -485,6 +486,7 @@ i{
     text-align: center;
     justify-content: center;
     margin-bottom: 10px;
+    display: flex;
 }
 
 
