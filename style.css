@@ -52,6 +52,7 @@ a{
     transition: 0.5s;
     width: 60px;
     height: 45px;
+    margin:0;
 }
 
 .nav-link{
@@ -180,7 +181,7 @@ h2{
     color: whitesmoke;
     align-items: center;
     justify-content: center;
-    background:rgb(79,107,152);
+    background:blue;
     background-size: cover;
     margin: auto;
     margin-bottom: 20px;
@@ -290,7 +291,7 @@ h2{
 }
 
 .card{
-    background:linear-gradient(180deg,#48679d 0%,#5c78ad 100%);
+    background:blue;
     width: 100%;
     max-width: 500px;
     height: 250px;
@@ -392,7 +393,7 @@ a.btn{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #07132b;
+    background: #003;
     gap: 30px;
     margin:auto;
     border-color:white;
@@ -401,7 +402,7 @@ a.btn{
 
 .skill-card{
     padding: 10px;
-    background:linear-gradient(180deg,#48679d 0%,#5c78ad 100%);
+    background:blue;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     flex-direction: column;
@@ -470,7 +471,7 @@ i{
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: 0.3s ease;
     margin: auto;
-    background: linear-gradient(180deg,#48679d 0%,#5c78ad 100%);
+    background: blue;
     border-radius: 15px;
     overflow: hidden;
     gap: 25px;
@@ -515,9 +516,8 @@ i{
     flex-direction: column;
     gap: 2rem;
 }
-
 .contact-card{
-    background:linear-gradient(180deg,#48679d 0%,#5c78ad 100%) ;
+    background:blue ;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     overflow: hidden;
@@ -553,7 +553,7 @@ i{
 input,textarea{
     align-content: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 7px;
     color:black;
