@@ -45,14 +45,53 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     document.body.classList.toggle("dark");
 
     const cards=document.querySelectorAll(".card");
-    cards.forEach(card=>{
-        card.addEventListener("mouseenter",()=>{
-            card.style.transform="translateY(-10px)";
-        });
-        card.addEventListener("mouseenter",()=>{
-            card.style.transform="translateY(0)";
+    const skillCards=document.querySelectorAll(".skill-card");
+    const servicesCards=document.querySelectorAll(".services-card");
+    const contactCards=document.querySelectorAll("contact-card");
+
+    window.addEventListener("scroll",()=>{
+        cards.forEach(card=>{
+            const cardTop=card.getBoundingClientRect().top;
+            if(cardTop<window.innerHeight-100){
+                card.classList.add("show");
+            }
         });
     });
+
+
+    window.addEventListener("scroll",()=>{
+        servicesCards.forEach(card=>{
+            const cardTop=card.getBoundingClientRect().top;
+            if(cardTop<window.innerHeight-100){
+                card.classList.add("show");
+            }
+        });
+    });
+
+    window.addEventListener("scroll",()=>{
+        skillCards.forEach(card=>{
+            const cardTop=card.getBoundingClientRect().top;
+            if(cardTop<window.innerHeight-100){
+                card.classList.add("show");
+            }
+        });
+    });
+
+    const observer=new
+    IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                contactCards.forEach((card,index)=>{
+                    setTimeout(()=>{
+                        card.classList.add("show");
+                    },index*200);
+                });
+            }
+        });
+    });
+    observer.observe(document.querySelector(".contact-container"));
+
+
 
     /*TYPING EFFECTS*/
 
