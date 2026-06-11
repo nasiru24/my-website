@@ -55,6 +55,22 @@ a{
     height: 45px;
 }
 
+.rotate{
+    animation: spin 1s ease;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    50%{
+        transform: rotate(15deg) scale(1.1);
+    }
+    100%{
+        transform: rotate(0deg) scale(1);
+    }
+}
+
 .nav-link{
     transition: 0.5s ease;
     size: 40px;
@@ -92,24 +108,14 @@ body{
 }
 
 
-.name span{
-    font-size: 26;
+.name{
+    font-size: clamp(2.5rem,8vh,4.5rem);
+    font-weight: 700;
+    margin-bottom: 10px;
     text-align: center;
     justify-content: center;
     padding-bottom: 50px;
     color: #4A8587;
-}
-
-p{
-    color:whitesmoke;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 32px;
-    margin: auto;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0 20px;
 }
 
 section{
@@ -161,50 +167,29 @@ h2{
 
 
 .highlight{
-    color:f5f5f5;
+    color:#f5f5f5;
 }
 
-.name{
-    font-size: 22px;
-    color: white;
-    margin-top: 30px;
-    text-align: center;
-    padding-bottom: 30px;
-}
 
 .hero{
-    justify-content: center;
     background:linear-gradient(
         135deg,
-        #04385A,#0A4A73
+        #020617,#0f172a,#1e293b
     );
     background-size: cover;
     margin-bottom: 20px;
     position: relative;
-    min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .hero-content{
-    text-align: center;
     font-family: "Inter",sans-serif;
     font-size: 18px;
     color: white;
     width: 100%;
+    max-width: 100%;
     line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-
-.work{
-    text-align: center;
-    align-self: center;
-    justify-content: center;
-    color:white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: inline-block;
-    font-size: 17px;
-    margin-bottom: 15px;
+    margin: 20px auto;
 }
 
 
@@ -221,9 +206,9 @@ h2{
     border-radius: 15px;
     margin:20px auto;
     justify-content: center;
-    width: 220px;
+    width: 190px;
     align-items: center;
-    padding:10px;
+    padding:8px;
     transition: 0.3s ease;
     align-self: center;
     text-decoration: none;
@@ -235,9 +220,31 @@ h2{
     transition: opacity 0.3s ease-in-out;
 }
 
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #18f0d0;
+    filter: blur(150px);
+    opacity: 0.15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#typing{
+    color: #18f0d0;
+    border-right: 3px solid #18f0d0;
+    padding-right: 5px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink{
+    50%{border-color: transparent;}
+}
+
 .about{
-    text-align: center;
-    justify-content: center;
     font-weight: 500;
     background: #003;
     background-repeat: no-repeat;
@@ -248,12 +255,11 @@ h2{
 
 .about-content{
     color: whitesmoke;
-    text-align: center;
-    justify-content:center;
     font-family:"Inter",monospace;
     font-size: 18px;
-    margin: auto;
+    margin:20px auto;
     width: 100%;
+    max-width: 100%;
     line-height: 1.8;
     display: inline-block;
 }
@@ -330,8 +336,8 @@ h2{
     text-align: center;
     justify-content: center;
     color: whitesmoke;
-    font-size: 17px;
-    margin-bottom: 30px;
+    font-size: 19px;
+    margin-bottom: 20px;
     display: flex;
 }
 
@@ -416,20 +422,20 @@ a.btn{
     transition: 0.3s ease;
     border-radius: 15px;
     box-shadow: 0 5px 8px rgba(0,0,0,0.1);
-    border-color: white;
+    border:1px solid #ddd; ;
     justify-content: center;
-    min-height: 100px;
-    max-width: 300px;
+    min-height: 80px;
+    max-width: 250px;
 }
 
 
 .skill-card i{
-    font-size: 2.5rem;
+    font-size: 22px;
     color: white;
 }
 
 .skill-card span{
-    font-size: 1.4rem;
+    font-size: 19px;
     font-weight: 600;
     color: white;
     text-align: center;
@@ -442,15 +448,15 @@ a.btn{
     justify-content: center;
     margin: auto;
     color:#4A8587;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 35px;
     margin-top: 30px;
-    font-size: 22px;
 
 }
 
 .skill p{
     margin-bottom: 30px;
+    font-size: 19px;
 }
 
 /*SERVICES SECTION*/
@@ -472,6 +478,7 @@ a.btn{
     font-family: "Inter",monospace;
     font-size: 18px;
     display: flex;
+    width: 100%;
 }
 
 .services-card{
@@ -491,18 +498,23 @@ a.btn{
     margin-bottom: 30px;
     display: grid;
     flex-direction: column;
-    border: white;
+    border:1px solid #ddd; ;
 }
 
 .services-title{
+    font-size: 22px;
+    color: #18f0d0 ;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
 .services-title i{
-    font-size: 26px;
+    font-size: 30px;
     align-items: center;
+    align-self: center;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .services-card i span{
@@ -512,7 +524,6 @@ a.btn{
     text-align: center;
     justify-content: center;
     margin-bottom: 15px;
-    width: auto;
     align-self: center;
 }
 
@@ -551,6 +562,7 @@ a.btn{
     ) ;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;;
     overflow: hidden;
     width: 100%;
     height: fit-content;
@@ -563,7 +575,7 @@ a.btn{
 }
 
 .contact-card i{
-    font-size: 35px;
+    font-size: 38px;
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -622,22 +634,18 @@ input{
 
 form .btn{
     display: inline-block;
-    background:linear-gradient(
+    color:white;
+    background: linear-gradient(
         180deg,
         #457B7B 0%,#448184 50%,#4AABB8 100%
-    );
-    color:white;
+    );;
     font-weight: bold;
     border-radius: 10px;
-    margin:25px auto;
-    justify-content: center;
-    width: 240px;
-    align-items: center;
     margin-bottom: 25px;
-    padding:15px;
     transition: 0.3s ease;
     align-self: center;
     text-decoration: none;
+    width: 100%;
 }
 
 form .btn:hover{
@@ -664,8 +672,6 @@ form .btn:hover{
     width:100% ;
     column-gap: 10px;
     display: flex;
-    gap: 35px;
-    margin-bottom: 200px;
 }
 
 .footer p{
@@ -684,206 +690,206 @@ form .btn:hover{
 /*ICONS*/
 
 .fa-hand{
-    width: 20%;
+    width: 30%;
     color: aqua;
     margin: auto;
 }
 
 
 .fa-person{
-    width: 20%;
+    width: 30%;
     color: burlywood;
     margin: auto;
 }
 
 .a-list{
-    width: 20%;
-    color: blue;
+    width: 30%;
+    color: burlywood;
     margin: auto;
 }
 
 .fa-globe{
-    width: 20%;
-    color: blue;
+    width: 30%;
+    color: aliceblue;
     margin: auto;
 }
 
 .fa-calculator{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:yellowgreen;
     margin: auto;
 }
 
 .fa-door-open{
-    width: 20%;
+    width: 30%;
     color: aqua;
     margin: auto;
 }  
 
 .fa-cart-shopping{
-    width: 20%;
+    width: 30%;
     color: aqua;
     margin: auto;
 }
 
 .fa-pen-to-square{
-    width: 20%;
-    color: blue;
+    width: 30%;
+    color: lightcoral;
     margin: auto;
 }
 
 .fa-robot{
-    width: 20%;
+    width: 30%;
     color: aqua;
     margin: auto;
 }
 
 .fa-js{
-    width: 20%;
+    width: 30%;
     color: yellow;
     margin: auto;
 }
 
 .fa-html5{
-    width: 20%;
+    width: 30%;
     color: yellowgreen;
     margin: auto;
 }
 .fa-css3-alt{
-    width: 20%;
+    width: 30%;
     color: yellowgreen;
     margin: auto;
 }
 
 .fa-python{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:yellow;
     margin: auto;
 }
 
 .fa-chart-line{
-    width: 20%;
+    width: 30%;
     color:burlywood;
     margin: auto;
 }
 
 .fa-square-root-variable{
-    width: 20%;
+    width: 30%;
     color:burlywood;
     margin: auto;
 }
 
 .fa-shapes{
-    width: 20%;
+    width: 30%;
     color:yellowgreen;
     margin: auto;
 }
 
 .fa-screwdriver-wrench{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:brown;
     margin: auto;
 }
 
 .fa-git-alt{
-    width: 20%;
+    width: 30%;
     color:red;
     margin: auto;
 }
 
 .fa-code{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:palevioletred;
     margin: auto;
 }
 
 .fa-github{
-    width: 20%;
+    width: 30%;
     color:violet;
     margin: auto;
 }
 
 .fa-globe{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:lightblue;
     margin: auto;
 }
 
 .fa-python{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:yellow;
     margin: auto;
 }
 
 .fa-mobile-screen-button{
-    width: 20%;
+    width: 30%;
     color:burlywood;
     margin: auto;
 }
 
 
 .fa-lock{
-    width: 20%;
+    width: 30%;
     color:yellowgreen;
     margin: auto;
 }
 
 .fa-palette{
-    width: 20%;
+    width: 30%;
     color:yellow;
     margin: auto;
 }
 
 .fa-circle-user{
-    width: 20%;
+    width: 30%;
     color:blue;
     margin: auto;
 }
 
 .fa-envelope{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:rgb(5, 255, 255);
     margin: auto;
 }
 
 .fa-whatsapp{
-    width: 20%;
+    width: 30%;
     color:green;
     margin: auto;
 }
 
 .fa-phone{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:green;
     margin: auto;
 }
 
 .fa-facebook{
-    width: 20%;
+    width: 30%;
     color:blue;
     margin: auto;
 }
 
 .fa-square-instagram{
-    width: 20%;
+    width: 30%;
     color:palevioletred;
     margin: auto;
 }
 
 .fa-linkedin{
-    width: 20%;
-    color:blue;
+    width: 30%;
+    color:lightblue;
     margin: auto;
 }
 
 .fa-github{
-    width: 20%;
+    width: 30%;
     color:violet;
     margin: auto;
 }
 
 .fa-business-time{
-    width: 20%;
+    width: 30%;
     color: blue;
     margin: auto;
 }
@@ -897,7 +903,7 @@ form .btn:hover{
 
 .hamburger.active .bar:nth-child(2){
     opacity: 0;
-    width: 25px;
+    width: 20px;
 }
 
 .hamburger.active .bar:nth-child(1){
@@ -907,7 +913,7 @@ form .btn:hover{
 
 .hamburger.active .bar:nth-child(3){
     transform: translateY(-8px)rotate-(45deg);
-    width: 20px;
+    width: 14px;
 }
 
 .hamburger:hover span:nth-child(2),
@@ -1015,18 +1021,18 @@ a.btn{
     box-shadow: 0 5px 8px rgba(0,0,0,0.1);
     border-color: white;
     justify-content: center;
-    min-height: 80px;
-    max-width: 250px;
+    min-height: 70px;
+    max-width: 220px;
 }
 
 
 .hero{
     background:linear-gradient(
         135deg,
-        #04385A,#0A4A73
+        #020617,#0f172a,#1e293b
     );
     background-size: cover;
-    margin-bottom: 20px;
+    margin: 20px auto;
     position: relative;
     min-height: 100vh;
     padding-bottom: 70px;
@@ -1039,10 +1045,8 @@ a.btn{
     color: white;
     width: 100%;
     max-width: 100%;
-    margin: 0 ;
+    margin: 20px auto;
     line-height: 1.8;
-    margin-bottom: 20px;
-    padding: 0 10px;
 }
 
 .about{
@@ -1057,34 +1061,16 @@ a.btn{
 .about-content{
     color: whitesmoke;
     font-size: 18px;
-    margin: auto;
+    margin:20px auto;
     width: 100%;
     max-width: 100%;
     line-height: 1.8;
     display:inline-block;
-    padding: 0 10px;
 }
 
-.work{
-    color:white;
-    text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: inline-block;
-    font-size: 17px;
-    margin-bottom: 15px;
+section{
+    padding: 60px 20px;
+    margin-top: 60px;
 }
-
-p{
-    color:whitesmoke;
-    font-family: "Inter",sans-serif,monospace;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    margin:0 auto;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 10px;
-}
-
 
 }

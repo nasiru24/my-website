@@ -54,8 +54,61 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
         });
     });
 
+    /*TYPING EFFECTS*/
+
+    const words=[
+        "Software Developer",
+        "Mathematics Student",
+        "Python Programmer"
+    ];
+    let wordIndex=0;
+    let charIndex=0;
+    let isDeleting=false;
+    const typingElement=document.getElementById("typing");
+    function typeEffect(){
+        const currentWord=words[wordIndex];
+
+        if(!isDeleting){
+            typingElement.textContent=currentWord.substring(0, charIndex+1);
+            charIndex++;
+            if(charIndex===currentWord.length){
+                isDeleting=true;
+                setTimeout(typeEffect,1500);
+                return;
+            }
+        }else{
+            typingElement.textContent=currentWord.substring(0,charIndex-1);
+            charIndex--;
+            if(charIndex===0){
+                isDeleting=false;
+                wordIndex=(wordIndex+1)%
+                words.length;
+            }
+        }
+        setTimeout(typeEffect,isDeleting ?
+            50:100
+        );
+    }
+    typeEffect();
 
 
+/*ROTATION ANIMATION*/
+
+const logo=document.getElementById("logo");
+const name=document.getElementById("name");
+function rotateElement(element){
+    element.classList.remove("rotate");
+    setTimeout(()=>{
+        element.classList.add("rotate");
+    },10);
+}
+
+logo.addEventListener("click",()=>{
+    rotateElement(logo);
+});
+name.addEventListener("click",()=>{
+    rotateElement(name);
+})
 
 
 
