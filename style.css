@@ -49,14 +49,16 @@ a{
     padding: 0;
     margin: 0;
     border-radius: 35px;
-    transform: rotateY(45 deg);
-    transition: 0.5s;
+    transform: rotateY(90deg);
+    transition: 0.8s;
     width: 60px;
     height: 45px;
 }
 
 .rotate{
-    animation: spin 1s ease;
+    animation: spin 2s ease;
+    transform: rotate(360deg);
+
 }
 
 @keyframes spin{
@@ -76,8 +78,13 @@ a{
     size: 40px;
 }
 
+.nav-link.active{
+    color: #18f0d0;
+}
+
+
 .nav-link:hover{
-    color:green;
+    color:#18f0d0;
 }
 
 .hamburger{
@@ -95,7 +102,81 @@ a{
     background-color: white;
 }
 
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#0a0a0a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:opacity 0.8s ease;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-content h1{
+    color:white;
+    margin-bottom:20px;
+    letter-spacing:5px;
+}
+
+.loading-bar{
+    width:250px;
+    height:6px;
+    background:rgb(255,255,255,0.2);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.loading-progress{
+    width: 0%;
+    height:100%;
+    background:#18f0d0;
+    animation: loading 2s linear forwards;
+}
+
+
+@keyframes loading{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+
+.fade-out{
+    opacity: 0;
+}
+
+
+#top-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: none;
+    color: #18f0d0;
+}
+
+#progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background: #18f0d0;
+    z-index: 9999;
+}
   
+
 /*ELEMENTS LAYOUT*/
 
 body{
@@ -111,10 +192,10 @@ body{
 .name{
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-top: 20px;
     text-align: center;
     justify-content: center;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     color:#18f0d0; 
 }
 
@@ -150,7 +231,7 @@ h2{
     justify-content: center;
     color:#18f0d0;
     display: inline-block;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
 }
 
@@ -177,7 +258,7 @@ h2{
 
 .hero-content{
     font-family: "Inter",sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: whitesmoke;
     width: 100%;
     max-width: 100%;
@@ -194,6 +275,7 @@ h2{
     color:white;
     font-weight: bold;
     border-radius: 15px;
+    margin-top: 30px;
     margin:20px auto;
     justify-content: center;
     width: 190px;
@@ -228,6 +310,7 @@ h2{
     border-right: 3px solid #18f0d0;
     padding-right: 5px;
     animation: blink 0.8s infinite;
+    font-size: 19px;
 }
 
 @keyframes blink{
@@ -238,7 +321,7 @@ h2{
     font-weight: 500;
     background: #003;
     background-repeat: no-repeat;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 
 }
 
@@ -476,7 +559,7 @@ a.btn{
     font-weight: lighter; 
     color: whitesmoke;
     font-family: "Inter",monospace;
-    font-size: 18px;
+    font-size: 17px;
     display: flex;
     width: 100%;
 }
@@ -581,6 +664,14 @@ a.btn{
     margin: auto;
     flex-direction: column;
     display: flex;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.8s;
+}
+
+.contact-card.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -630,10 +721,23 @@ input,textarea{
     outline: none;
     padding: 18px;
     margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+input.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+textarea.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 textarea{
-    min-height: 180px;
+    min-height: 150px;
     resize: vertical;
 }
 
@@ -693,7 +797,7 @@ form .btn:hover{
 }
 
 .connect{
-    font-size: 25px;
+    font-size: 35px;
     margin-bottom: 30px;
 }
 
@@ -947,8 +1051,14 @@ form .btn:hover{
 .nav-item{
     margin: 16px 0;
 }
-.nav-menu.active{
+.nav-link.active{
     left: 0;
+    color: #18f0d0;
+}
+
+.nav-link{
+    transition: 0.5s ease;
+    size: 40px;
 }
 
 
@@ -1061,7 +1171,7 @@ a.btn{
 
 
 .hero-content{
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     width: 100%;
     max-width: 100%;
@@ -1072,7 +1182,7 @@ a.btn{
 .about{
     font-weight: 500;
     background: #003;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     width: 100%;
 
 }
@@ -1081,6 +1191,7 @@ a.btn{
 .about-content{
     color: whitesmoke;
     font-size: 18px;
+    margin-top: 25px;
     margin:20px auto;
     width: 100%;
     max-width: 100%;

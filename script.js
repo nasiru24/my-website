@@ -47,7 +47,8 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     const cards=document.querySelectorAll(".card");
     const skillCards=document.querySelectorAll(".skill-card");
     const servicesCards=document.querySelectorAll(".services-card");
-    const contactCards=document.querySelectorAll("contact-card");
+    const contactCards=document.querySelectorAll(".contact-card");
+    const inputs=document.querySelectorAll(".contact-input");
 
     window.addEventListener("scroll",()=>{
         cards.forEach(card=>{
@@ -77,19 +78,34 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
         });
     });
 
-    const observer=new
-    IntersectionObserver(entries=>{
-        entries.forEach(entry=>{
-            if(entry.isIntersecting){
-                contactCards.forEach((card,index)=>{
-                    setTimeout(()=>{
-                        card.classList.add("show");
-                    },index*200);
-                });
+
+    function  revealContactCards(){
+        contactCards.forEach(card=>{
+            const cardTop=card.getBoundingClientRect().top;
+            if(cardTop<window.innerHeight-100){
+                card.classList.add("show");
             }
         });
-    });
-    observer.observe(document.querySelector(".contact-container"));
+        
+    }
+    window.addEventListener("scroll",
+        revealContactCards
+    );
+    revealContactCards();
+
+    function revealInputs(){
+        inputs.forEach(input=>{
+            const inputTop=input.getBoundingClientRect().top;
+            if(inputTop<window.innerHeight-100){
+                input.classList.add("show");
+            }
+        });
+    }
+    window.addEventListener(
+        "scroll",
+        revealInputs
+    );
+    revealInputs();
 
 
 
@@ -97,7 +113,8 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
 
     const words=[
         "Software Developer",
-        "Mathematics Student",
+        "UEW Student",
+        "Mathematics Department",
         "Python Programmer"
     ];
     let wordIndex=0;
@@ -151,6 +168,75 @@ name.addEventListener("click",()=>{
 
 
 
+/*LOADING SCREEN*/
+
+window.addEventListener("load",()=>{
+    const loader=document.getElementById("loader");
+    console.log(loader);
+    loader.classList.add("fade-out");
+    setTimeout(()=>{
+        loader.style.display="none";
+    },1000);
+});
+
+
+/*BACK TO TOP BUTTON*/
+
+const topBtn=document.getElementById("top-btn");
+window.addEventListener("scroll",()=>{
+    if(window.scrollY>300){
+        topBtn.style.display="block";
+    }
+    else{
+        topBtn.style.display="none";
+    }
+});
+topBtn.addEventListener("click",()=>{
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+});
 
 
 
+//NAVBAR
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".nav-link");
+window.addEventListener("scroll",()=>{
+    let current="";
+    sections.forEach(section=>{
+        const top=section.offsetTop;
+        const height=section.clientHeight;
+        if(scrollY>=top-200){
+            current=section.getAttribute("id");
+        }
+    });
+    navLinks.forEach(link=>{
+        link.classList.remove("active");
+        if(link.getAttribute("href")===`#${current}`)
+            {
+            link.classList.add("active");
+        }
+    });
+});
+
+
+//feel
+
+document.addEventListener("mousemove",(e)=>{
+    hero.style.backgroundPosition=`${e.clientX/50}px ${e.clientY/50}px`;
+});
+
+
+
+//PROGRESS BAR
+
+window.addEventListener("scroll",()=>{
+    const scrollTop=document.documentElement.scrollTop;
+    const scrollHeight=document.documentElement.scrollHeight-
+    document.documentElement.clientHeight;
+    const progress=(scrollTop/scrollHeight)*100;
+    document.getElementById("progress-bar").style.width=progress+"%";
+});

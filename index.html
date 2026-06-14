@@ -9,9 +9,18 @@
         <title>NASIR PORTFOLIO</title>
     </head>
     <body>
+      <div id="loader">
+        <div class="loader-content">
+          <h1>NASIRU</h1>
+          <div class="loading-bar">
+            <div class="loading-progress"></div>
+          </div>
+        </div>
+      </div>
+      <div id="progress-bar"></div>
        <header>
             <nav class="navbar">
-              <img src="logo.jpg"class="nav-branding"id="logo">
+              <img src="logo1.jpg"class="nav-branding"id="logo">
                 <ul class="nav-menu">
                     <li class="nav-item">
                       <a href="#home"class="nav-link">Home</a></li>
@@ -92,7 +101,7 @@
               </div></div></div>
             <div class="card">
               <div class="project-image">
-              <img src="calculator.png">
+              <img src="calc.jpg">
               <span>Arithmetic Calculator</span>
             </div></div>
             <div class="card">
@@ -270,10 +279,10 @@
             action="https://formsubmit.co/abdulnasirurazak@gmail.com"
             method="POST"
             class="contact-form">
-              <input type="text"placeholder="Your Name"><br><br>
-              <input type="email"placeholder="Your Email*"><br><br>
-              <input type="text"placeholder="Your Number"><br><br>
-              <textarea placeholder="Your Message*"></textarea><br><br>
+              <input type="text"class="contact-input"placeholder="Your Name"><br><br>
+              <input type="email"class="contact-input"placeholder="Your Email*"><br><br>
+              <input type="text"class="contact-input"placeholder="Your Number"><br><br>
+              <textarea placeholder="Your Message*"class="contact-input"></textarea><br><br>
               <button class="btn"type="submit">Send message</button>
             </form>
           </div></div>
@@ -292,6 +301,7 @@
           </p>
         </footer>
         </section>
+        <button id="top-btn"></button>
         <script src="script.js"></script>
     </body>
 </html>
