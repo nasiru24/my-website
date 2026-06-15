@@ -49,15 +49,14 @@ a{
     padding: 0;
     margin: 0;
     border-radius: 35px;
-    transform: rotateY(90deg);
+    transform: rotateY(45deg);
     transition: 0.8s;
     width: 60px;
     height: 45px;
 }
 
 .rotate{
-    animation: spin 2s ease;
-    transform: rotate(360deg);
+    animation: spin 1s ease;
 
 }
 
@@ -797,7 +796,7 @@ form .btn:hover{
 }
 
 .connect{
-    font-size: 35px;
+    font-size: 20px;
     margin-bottom: 30px;
 }
 
@@ -1048,17 +1047,27 @@ form .btn:hover{
     transition: 0.3s;
 }
 
+.nav-menu.active{
+    color: #18f0d0;
+    display: flex;
+}
+
+
+.nav-menu:hover{
+    color:#18f0d0;
+}
+
 .nav-item{
     margin: 16px 0;
 }
-.nav-link.active{
+.nav-menu.active{
     left: 0;
-    color: #18f0d0;
 }
 
-.nav-link{
+.nav-menu{
     transition: 0.5s ease;
     size: 40px;
+    display: none;
 }
 
 
