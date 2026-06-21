@@ -240,3 +240,74 @@ window.addEventListener("scroll",()=>{
     const progress=(scrollTop/scrollHeight)*100;
     document.getElementById("progress-bar").style.width=progress+"%";
 });
+
+//REVEAL SERVICES CONTENTS
+
+const reveal=document.querySelectorAll(".reveal");
+function revealElements(){
+    reveal.forEach((element,index)=>{
+        const revealTop=element.getBoundingClientRect().top;
+        if(revealTop<window.innerHeight-100){
+            setTimeout(()=>{
+                element.classList.add("show");
+            },index*100);
+        }
+    });
+}
+window.addEventListener("scroll",revealElements);
+revealElements();
+
+
+
+//ABOUT TEXTS BLUR
+
+const blurItems=document.querySelectorAll(".blur-reveal");
+function revealBlur(){
+    blurItems.forEach(item=>{
+        const blurTop=item.getBoundingClientRect().top;
+        if(blurTop<window.innerHeight-100){
+            item.classList.add("show");
+        }
+    });
+}
+window.addEventListener(
+    "scroll",
+    revealBlur
+);
+revealBlur();
+
+
+
+//SKILLS SLIDE
+
+const sliders=document.querySelectorAll(".slide-right, .slide-left");
+function revealSlides(){
+    sliders.forEach(slide=>{
+        const slideTop=slide.getBoundingClientRect().top;
+        if(slideTop<window.innerHeight-100){
+            slide.classList.add("show");
+        }
+    });
+}
+window.addEventListener(
+    "scroll",
+    revealSlides
+);
+revealSlides();
+
+
+
+
+//SCROLL-FADE
+const section=document.querySelector(".scroll-fade");
+window.addEventListener(
+    "scroll",()=>{
+        const rect=section.getBoundingClientRect();
+        const progress=1-rect.top/window.innerHeight;
+        progress=Math.max(0,Math.min(progress,1));
+        section.style.opacity=progress;
+        section.style.filter=`blur(${(1-progress)*10}px)`;
+        section.style.transform=`translateY(${(1-progress)*50}px)
+        scale(${0.9+progress*0.1})`;
+    }
+);

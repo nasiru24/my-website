@@ -24,7 +24,7 @@ a{
 .navbar{
     top: 0;
     width:100%;
-    background: #003;
+    background: #000;
     background-size: cover;
     position: fixed;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ a{
     align-items: center;
     padding:20px;
     margin:0 auto;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
 }
 
 
@@ -169,7 +169,7 @@ a{
     position: fixed;
     top: 0;
     left: 0;
-    height: 5px;
+    height: 6px;
     width: 0;
     background: #18f0d0;
     z-index: 9999;
@@ -182,7 +182,7 @@ body{
     color: whitesmoke;
     align-items: center;
     justify-content: center;
-    background: #003;
+    background: #000;
     font-family: "Inter",sans-serif,monospace;
     background-repeat: no-repeat;
 }
@@ -232,6 +232,50 @@ h2{
     display: inline-block;
     margin-bottom: 15px;
 
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(30px);
+    transition:all 0.6s ease;
+}
+
+.reveal.show{
+    opacity: 1;
+    transform:translateY(0);
+}
+
+
+.blur-reveal{
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.8s ease,filter 0.8 ease,transform 0.8 ease;
+}
+
+.blur-reveal.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+}
+
+
+.slide-right{
+    opacity:0;
+    transform: translateX(100px) scale(0.9);
+    transition:0.8 ease;
+}
+
+.slide-left{
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+    transition: 0.8 ease;
+}
+
+.slide-right.show,
+.slide-left.show{
+    opacity: 1;
+    transform: translateX(0);
 }
 
 
@@ -304,6 +348,15 @@ h2{
     transform: translate(-50%,-50%);
 }
 
+.hero-icons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+    margin: auto;
+}
+
+
 #typing{
     color: #18f0d0;
     border-right: 3px solid #18f0d0;
@@ -318,7 +371,7 @@ h2{
 
 .about{
     font-weight: 500;
-    background: #003;
+    background: #000;
     background-repeat: no-repeat;
     padding-bottom: 25px;
 
@@ -464,7 +517,6 @@ a.btn{
 /*SKILL SECTION*/
 
 .skill{
-    background: #003;
     background-repeat: no-repeat;
     padding:0 1rem;
     align-items: center;
@@ -519,7 +571,7 @@ a.btn{
 .skill-card span{
     font-size: 19px;
     font-weight: 600;
-    color: #18f0d0;
+    color: #ECECEC;
     text-align: center;
     justify-content: center;
     margin: 0;
@@ -530,9 +582,9 @@ a.btn{
     justify-content: center;
     margin: auto;
     color:#18f0d0;
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 35px;
-    margin-top: 30px;
+    padding-top: 30px;
 
 }
 
@@ -544,7 +596,6 @@ a.btn{
 /*SERVICES SECTION*/
 
 .services{
-    background: #003;
     background-repeat: no-repeat;
     width: 100%;
 }
@@ -591,13 +642,6 @@ a.btn{
 }
 
 
-.services-title{
-    font-size: 22px;
-    color: #18f0d0 ;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
 
 .services-title i{
     font-size: 30px;
@@ -609,7 +653,7 @@ a.btn{
     margin-top: 7px;
 }
 
-.services-card i span{
+.services-title span{
     color: #18f0d0;
     font-size: 24px ;
     font-weight: 600;
@@ -619,13 +663,37 @@ a.btn{
     align-self: center;
 }
 
+.check{
+   color: #ECECEC;
+    font-size: 20px ;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    align-self: center;  
+}
+
+.services-content i{
+    font-size: 30px;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.contents{
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
 
 /*CONTACT LAYOUT*/
 
 .contact{
     width: 100%;
     margin: auto;
-    background: #003;
     background-repeat: no-repeat;
     background-size: cover;
     gap: 15px;
@@ -765,6 +833,10 @@ form .btn:hover{
     transition: opacity 0.3s ease-in-out;
 }
 
+.contact p .reveal{
+    font-size: 20px;
+}
+
 /*FOOTER SECTION*/
 
 
@@ -796,11 +868,21 @@ form .btn:hover{
 }
 
 .connect{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 30px;
+    text-align: center;
+    justify-content: center;
 }
 
 /*ICONS*/
+
+
+.fa-check-circle{
+    width: 30%;
+    color: green;
+    margin: auto;
+}
+
 
 .fa-hand{
     width: 30%;
@@ -1040,7 +1122,7 @@ form .btn:hover{
     top:70px;
     gap: 0;
     flex-direction: column;
-    background-color:#003;
+    background: #000;
     width:100%;
     text-align: center;
     justify-content: center;
@@ -1072,9 +1154,9 @@ form .btn:hover{
 
 
 body{
-    color: whitesmoke;
+    color: #ECECEC;
     width: 100%;
-    background: #003;
+    background: #000;
     font-family: "Inter",sans-serif,monospace;
     background-repeat: no-repeat;
 }
@@ -1190,7 +1272,6 @@ a.btn{
 
 .about{
     font-weight: 500;
-    background: #003;
     padding-bottom: 15px;
     width: 100%;
 
