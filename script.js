@@ -176,7 +176,7 @@ window.addEventListener("load",()=>{
     loader.classList.add("fade-out");
     setTimeout(()=>{
         loader.style.display="none";
-    },1000);
+    },1200);
 });
 
 
@@ -241,7 +241,7 @@ window.addEventListener("scroll",()=>{
     document.getElementById("progress-bar").style.width=progress+"%";
 });
 
-//REVEAL SERVICES CONTENTS
+//REVEAL CONTENTS
 
 const reveal=document.querySelectorAll(".reveal");
 function revealElements(){
@@ -256,6 +256,28 @@ function revealElements(){
 }
 window.addEventListener("scroll",revealElements);
 revealElements();
+
+
+//SERVICES FADE-UP
+
+const fadeElements=document.querySelectorAll(".fade-up");
+function revealFade(){
+    fadeElements.forEach(fade=>{
+        const fadeTop=fade.getBoundingClientRect().top;
+        if(fadeTop<window.innerHeight-100){
+                fade.classList.add("show");
+        }
+    });
+}
+window.addEventListener(
+    "scroll",
+    revealFade
+);
+revealFade();
+
+
+
+
 
 
 
