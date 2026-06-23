@@ -113,9 +113,9 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
 
     const words=[
         "Software Developer",
-        "UEW Student",
-        "Mathematics Department",
-        "Python Programmer"
+        "Data Engineer",
+        "Mathematics Student",
+        "Problem Solver"
     ];
     let wordIndex=0;
     let charIndex=0;
@@ -146,6 +146,47 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
         );
     }
     typeEffect();
+
+
+
+
+    //STATSISTICS
+
+    const counters=document.querySelectorAll(".counter");
+    counters.forEach(counter=>{
+        let count=0;
+        const target=parseInt(counter.innerText);
+        const update=()=>{
+            if(count<target){
+                count ++;
+                counter.innerText=count;
+                setTimeout(update,20);
+            }
+        }
+        update();
+    });
+
+
+    //PARTICLES
+
+    tsParticles.load("particles-js",{
+        particles:{
+            number:{
+                value:70
+            },
+            color:{
+                value:"#18f0d0"
+            },
+            move:{
+                enable:true,
+                speed:1
+            },
+            size:{
+                value:3
+            }
+        }
+    });
+
 
 
 /*ROTATION ANIMATION*/

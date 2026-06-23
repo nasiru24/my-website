@@ -47,14 +47,17 @@
         <!--HOME SECTION LAYOUT-->
 
           <section class="hero" id="home">
+            <div id="particles-js">
+            <div class="glow"></div>
              <h1 class="name slide-right" id="name">
+              Hi, I'm
               <span>Abdul Nasiru Razak</span>
              </h1>
              <p class="reveal">
               <span class="typing" id="typing"></span>
               </p>
               <p class="hero-content reveal">
-                  I build software based systems,modern website applications, and exploring the beauty of mathematics in data engineering
+                  I build software systems, modern web applications, and data-driven solutions
                   </p>
                   <p>
              <a href="#contact"class="btn reveal fas fa-arrow-down"id="prompt-btn">Get in Touch</a>
@@ -66,9 +69,37 @@
             <i class="fa-brands fa-github"></i><br><br>
           </p>
              <p id="output"></p>
-             <div class="hero-wave"></div>
+             <div class="scroll-indicator">
+              <span>Scroll Down</span>
+              <i class="fa-solid fa-angle-down"></i>
+             </div>
+             <div class="stats">
+            <div class="stat">
+              <h3 class="counter">+5</h3>
+              <p>Projects</p>
+            </div>
+            <div class="stat">
+              <h3 class="counter">+3</h3>
+              <p>Years Learning</p>
+            </div>
+            <div class="stat">
+              <h3 class="counter">100</h3>
+              <p>Passion</p>
+            </div>
+          </div>
+
+             <div class="hero-wave">
+              <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320">
+              <path fill="#000814" fill-opacity="1"
+              d="M0 224L60 208C120 192 240 160 360 149 3C480 139 600 149.720 170.7C840 192 960 224 1080 224C1200 224 1320 192 1380 176L1440 160L1440 320L0 320Z">
+            </path>
+            </svg>
+             </div>
+             </div>
           </section>
 
+          
           <!--ABOUT SECTION LAYOUT-->
 
          <section class="about"id="about">
@@ -385,6 +416,7 @@
         </footer>
         </section>
         <button class="fas fa-arrow-up"id="top-btn"></button>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
