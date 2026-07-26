@@ -6,25 +6,53 @@
 <meta name="viewport"content="width=device-width,initial-scale=1.0">
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet"href="style.css">
+<link rel="icon"href="favicon.ico">
         <title>NASIR PORTFOLIO</title>
     </head>
     <body>
+      <div class="spotlight"></div>
+      <div id="loader">
+        <div class="loader-content">
+          <h1>NASIRU...</h1>
+          <div class="loading-bar">
+            <div class="loading-progress"></div>
+          </div>
+        </div>
+      </div>
+      <div id="progress-bar"></div>
        <header>
             <nav class="navbar">
-              <img src="logo.jpg"class="nav-branding"id="home">
+              <img src="logo.jpg"class="nav-branding" id="logo">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                      <a href="#home"class="nav-link">Home</a></li>
+                      <a href="#home"class="nav-link">
+                        <i class="fas fa-house"></i> 
+                        <span>Home</span>
+                      </a></li>
                     <li class="nav-item">
-                      <a href="#about"class="nav-link">About</a></li>
+                      <a href="#about"class="nav-link">
+                        <i class="fas fa-user"></i> 
+                        <span>About</span>
+                      </a></li>
                     <li class="nav-item">
-                      <a href="#project"class="nav-link">Projects</li>
+                      <a href="#project"class="nav-link">
+                        <i class="fas fa-code"></i>
+                        <span>Projects</span>
+                      </a></li>
                         <li class="nav-item">
-                          <a href="#skill"class="nav-link">Skills</a></li>
+                          <a href="#skill"class="nav-link">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Skills</span>
+                          </a></li>
                         <li class="nav-item">
-                          <a href="#services"class="nav-link">Services</a></li>
+                          <a href="#services"class="nav-link">
+                            <i class="fas fa-briefcase"></i>
+                            <sapn>Services</sapn>
+                          </a></li>
                         <li class="nav-item">
-                          <a href="#contact"class="nav-link">Contacts</a></li>
+                          <a href="#contact"class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                          <span>Contact</span></a></li>
                         </li>
                 </ul>
                 <div class="hamburger">
@@ -35,37 +63,130 @@
                        </nav>
         </header>
 
-        <!--HOME SECTION LAYOUT-->
+            <section class="hero" id="home">
+              <div class="hero-background">
 
-          <section class="hero" id="home">
-             <p class="name">
-              Hey, I'm
-             <br><span>Abdul Nasiru Razak</span>
-             </p>
-             <p>
-              <p class="work">Mathematics Student | Software Developer</p>
-              </p>
-              <p class="hero-content">
-                  I build intelligent systems,modern web applications, and exploring how mathematics can solve real-world and technical problems.
-             <a href="#about"class="btn"id="prompt-btn">Read More</a>
-             </p>
-             <p id="output"></p>
-          </section>
+              <div class="hero-gradient"></div>
+              <div class="hero-glow"></div>
 
+              <div class="aurora">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div id="particles-js"></div>
+              </div>
+
+              <div class="hero-container">
+
+                <div class="hero-content">
+                  <p class="hero-greeting slide-left">
+                    <i class="fa-solid fa-hand"></i> Hi, I'm </p>
+                  <h1 class="hero-name slide-right" id="hero-name">
+                    Abdul Nasiru Razak
+                  </h1>
+                  <div class="hero-badge reveal">Available for work</div>
+                  <h2 class="hero-role reveal">
+                    <span id="typing"></span>
+                  </h2>
+                  <p class="hero-description reveal">
+                    Passsionate about building modern web applications, intelligent software, and data-diven solutions that solve real-world problems.
+                  </p>
+                  <div class="hero-buttons">
+                    <a href="#project" class="btn btn-primary magnetic-btn slide-left">
+                      View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary magnetic-btn slide-right">
+                      Contact Me
+                    </a>
+                  </div>
+                </div>
+
+                <div class="hero-visual">
+                  <div class="workspace" id="workspace">
+
+                    <div class="workspace-glow"></div>
+                    <div class="orbit-ring"></div>
+                    <div class="laptop">
+                      <div class="laptop-screen">
+                        <div class="terminal-header">
+                          <span class="red"></span>
+                          <span class="yellow"></span>
+                          <span class="green"></span>
+                        </div>
+
+                        <div class="terminal-body">
+                          <p class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="typing-command"></span>
+                            <span class="cursor"></span>
+                          </p>
+                          <div class="terminal-output"></div>
+                          <!--
+                          <p class="terminal-line hidden">
+                            Starting development server...
+                          </p>
+                          <p class="terminal-line hidden">
+                            Portfolio compiled successfully.
+                          </p>
+                          <p class="terminal-line hidden">
+                            Ready for recruiters.
+                          </p>
+                          <p class="terminal-line hidden">Welcome</p>
+                        -->
+                        </div>
+                      </div>
+
+                      <div class="laptop-base">
+                        <div class="keyboard">
+                          <div class="trackpad"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="floating-icons">
+                      <div class="tech-icon html">
+                        <i class="fa-brands fa-html5"></i>
+                      </div>
+                      <div class="tech-icon css">
+                        <i class="fa-brands fa-css3-alt"></i>
+                      </div>
+                      <div class="tech-icon js">
+                        <i class="fa-brands fa-js"></i>
+                      </div>
+                      <div class="tech-icon github">
+                        <i class="fa-brands fa-github"></i>
+                      </div>
+                      <div class="tech-icon database">
+                        <i clas="fa-solid fa-database"></i>
+                      </div>
+                      <div class="tech-icon cloud">
+                        <i class="fa-solid fa-cloud"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div></div>
+
+              <div class="scroll-indicator">
+                <span class="mouse">
+                  <span class="wheel"></span>
+                  </span>
+              </div>
+            </section>
+
+          
           <!--ABOUT SECTION LAYOUT-->
 
-         <section class="about"id="about">
-          <h2>About Me</h2>
-          <p>
-            <img src="my photo.jpg">
-          </p>
+         <section class="about reveal"id="about">
+          <h2 class="slide-left">About Me</h2>
           <div class="about-content">
+            <p class="reveal">
               I'm a <span class="highlight"> software developer </span> with nearly <span class="highlight"> 5 years </span>of experience
               in building systems that actually work.
               Currently, I'm studying <span class="highlight"> mathematics </span> at the <span class="highlight"> University Of 
               Education, Winneba. </span> I enjoy building responsive websites and learning modern development tools and exploring how mathematics and technology can solve practical problems in everyday life.
                </p>
-               <p>
+               <p class="reveal">
                 I often experiment with new programming languages, development tools, and ways mathematics can improve them.
                I started coding as a hobby and later realised that many real-world problems can be solved through <span class="highlight"> programming </span> and <span class="highlight"> mathematical thinking</span>. 
               Beyond putting nose in books, I'm passionate about continuous skill development and, <span class="highlight"> cooking.
@@ -73,77 +194,178 @@
             </p>
           </div>
          </section>
+         <section id="stats"class="stats">
+            <div class="stats-card reveal">
+              <i class="fa-solid fa-code"></i>
+              <h2>
+              <span class="counter"data-target="30">0</span>
+              <span class="plus">+</span>
+              </h2>
+              <p>Projects Built</p>
+            </div>
+            <div class="stats-card reveal">
+              <i class="fa-solid fa-laptop-code"></i>
+              <h2>
+              <span class="counter"data-target="15">0</span>
+              <span class="plus">+</span>
+              </h2>
+              <p>Technologies</p>
+            </div>
+            <div class="stats-card reveal">
+              <i class="fa-solid fa-users"></i>
+              <h2>
+                <span class="counter"data-target="10">0</span>
+              <span class="plus">+</span>
+              </h2>
+              <p>Happy Clients</p>
+            </div>
+            <div class="stats-card reveal">
+              <i class="fa-solid fa-mug-hot"></i>
+              <h2>
+              <span class="counter"data-target="500">0</span>
+              <span class="plus">+</span>
+              </h2>
+              <p>Working Hours</p>
+            </div>
+          </section>
+
 
          <!--PROJECT SECTION LAYOUT-->
 
          <section class="project"id="project">
-          <h2>My Projects</h2>
-          <p>These are some projects I've built recently.</p>
-          <p>
+          <h2 class="fade-up">Recent Projects</h2>
+          <p class="explain fade-up">These are some projects I've built recently.</p>
           <div class="container">
-            <span>Portfolio Website</span>
-            <div class="card">
+            <div class="card slide-left">
               <div class="project-image">
-              <img src="css.png">
-              </div></div>
-              <div class="card">
+              <img src="portfolio.jpg" alt="Portfolio">
+              <div class="project-overlay">
+                <span>PORTFOLIO WEBSITE</span>
               <div class="project-content">
-              <h3>Tools and Features</h3>
-              <p>A responsive website built with HTML, CSS and JavaScript</p>
+              <p class="fade-up">A responsive website built with HTML, CSS and JavaScript</p>
+              </div>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
               <div class="project-buttons">
-                <a href="#"class="btn">Demo</a>
-                <a href="#"class="btn">GitHub</a>
-              </div></div></div>
-              <span>Arithmetic Calculator</span>
-            <div class="card">
+                <a href="https://nasiru24.github.io/my-website"class="btn magnetic-btn slide-right">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Live</span>
+                </a>
+                <a href="https://github.com/nasiru24/my-website"class="btn magnetic-btn slide-left">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Github</span>
+                </a>
+              </div>
+              <a href="#"class="card-button">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            </div></div></div>
+            <div class="card slide-left">
               <div class="project-image">
-              <img src="calculator.png">
-            </div></div>
-            <div class="card">
+              <img src="calc.jpg">
+              <div class="project-overlay">
+              <span>ARITHMETIC CALCULATOR</span>
             <div class="project-content">
-              <h3>Tools and Features</h3>
-              <p> A responsive calculator that performs advanced arithmetic operations with a clean user interface built with HTML, CSS and JavaScript</p>
+              <p class="fade-up"> A responsive calculator that performs advanced arithmetic operations with a clean user interface built with HTML, CSS and JavaScript</p>
+              </div>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
               <div class="project-buttons">
-                <a href="#"class="btn">Demo</a>
-                <a href="#"class="btn">GitHub</a>
-                </div></div></div>
-                <span>Student Portal</span>
-            <div class="card">
+                <a href="#"class="btn magnetic-btn slide-left">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Live</span>
+                </a>
+                <a href="https://github.com/nasiru24/my-website"class="btn magnetic-btn slide-right">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Github</span>
+                </a>
+                </div>
+                <a href="#"class="card-button">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+              </div></div></div>
+            <div class="card slide-left">
               <div class="project-image">
               <img src="portal.jpg">
-              </div></div>
-              <div class="card">
+              <div class="project-overlay">
+              <span>STUDENT PORTAL</span>
               <div class="project-content">
-              <h3>Tools and Features</h3>
-              <p>A college students portal built with HTML, CSS, JavaScript and Python</p>
+              <p class="slide-left">A college students portal built with HTML, CSS, JavaScript and Python</p>
+              </div>
+              <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
               <div class="project-buttons">
-                <a href="#"class="btn">Demo</a>
-                <a href="#"class="btn">GitHub</a>
-                </div></div></div> 
-                <span>E-Commerce Website</span>
-                <div class="card">
+                <a href="#"class="btn magnetic-btn slide-right">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Live</span>
+                </a>
+                <a href="https://github.com/nasiru24/my-website"class="btn magnetic-btn slide-left">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Github</span>
+                </a>
+                </div>
+                <a href="#"class="card-button">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+              </div></div></div>
+                <div class="card slide-left">
                   <div class="project-image">
                     <img src="javascript.png">
-                  </div></div>
-                  <div class="card">
+                    <div class="project-overlay">
+                    <span>E-COMMERCE WEBSITE</span>
                   <div class="project-content">
-                    <h3>Tools and Features</h3>
-                    <p>A responsive online store built with HTML,CSS and JavaScript.</p>
-                    <div class="project-buttons">
-                <a href="#"class="btn">Demo</a>
-                <a href="#"class="btn">GitHub</a>
+                    <p class="fade-up">A responsive online store built with HTML,CSS and JavaScript.</p>
+                    </div>
+                    <div class="tech-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+                    <div class="project-buttons ">
+                <a href="#"class="btn magnetic-btn slide-left">
+                <span class="btn-glow"></span>
+                <span class="btn-shine"></span>
+                      <span class="btn-text">Live</span>
+                      </a>
+                <a href="https://github.com/nasiru24/my-website"class="btn      magnetic-btn slide-right">
+                  <span class="btn-glow"></span>
+                  <span class="btn-shine"></span>
+                      <span class="btn-text">Github</span>
+                </a>
                 </div>
-                  </div>
-          </div></p>
+                <a href="#"class="card-button">
+              Read More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+                  </div></div></div>
+          </div>
          </section>
 
          <!--SKILL SECTION LAYOUT-->
 
          <section class="skill"id="skill">
-          <h2>Skills & Expertise</h2>
-          <p>Below are a collection of technologies I'm passionate with, from programming languages to Mathematics and tools</p>
-              <p class="skill-title">Programming Languages</p>
-              <div class="skill-container">
+          <h2 class="fade-up">Skills & Expertise</h2>
+          <p class=" intro fade-up">Below are a collection of technologies I'm passionate with, from programming languages to Mathematics and tools</p>
+              <p class="skill-title fade-up">Languages</p>
+              <div class="skill-container slide-left">
             <div class="skill-card">
               <i class="fab fa-js"></i>
               <span>JavaScript</span>
@@ -160,8 +382,8 @@
               <i class="fab fa-python"></i>
               <span>Python</span>
               </div></div>
-                <p class="skill-title">Mathematics</p>
-                <div class="skill-container">
+                <p class="skill-title fade-up">Mathematics</p>
+                <div class="skill-container slide-right">
             <div class="skill-card">
               <i class="far fa-chart-line"></i>
               <span>Statistics</span>
@@ -175,8 +397,8 @@
                 <span>Geometry</span>
               </div></div>
               <p>
-            <p class="skill-title">Tools & Platforms</p>
-            <div class="skill-container">
+            <p class="skill-title fade-up">Tools & Platforms</p>
+            <div class="skill-container slide-left">
             <div class="skill-card">
               <i class="fab fa-git-alt"></i>
               <span>Git</span>
@@ -191,7 +413,7 @@
             </div>
             <div class="skill-card">
               <i class="fas fa-robot"></i>
-              <span>ChatGPT</span>
+              <span>AI</span>
             </div>
           </p>
           </div>
@@ -200,101 +422,209 @@
          <!--SERVICES SECTION LAYOUT-->
          
          <section class="services"id="services">
-              <h2>Services I Provide</h2>
-          <div class=".container">
-            <div class="services-card">
-              <div class="services-title">
-              <i class="fas fa-globe"></i>
-              <span>Responsive Websites</span>
-              </div>
-              <p class="services-content">
-                With expertise in html, css and javascript, I'm able to design responsive websites such as portfolio websites or e-commerce websites.
+              <h2 class="fade-up">What I Do</h2>
+              <p class=" contents fade-up">
+                Most people usually ask the services I offer. Below, you can select a subject and we work together on it.
               </p>
-            </div>
-            <div class="services-card">
-              <div class="services-title">
-              <i class="fab fa-python"></i>
-              <span>Python Development</span>
+          <div class="services-container">
+            <div class="services-card slide-left">
+              <div class="card-glow"></div>
+              <div class="card-header">
+              <div class="card-icon">
+              <i class="fas fa-globe fade-up services-icon"></i>
               </div>
-              <p class="services-content">I have dived deep into python programming, building automation scripts,bots and mastering fundamentals of web development and problem solving.</p>
-              </div>
-              <div class="services-card">
-                <div class="services-title">
-                <i class="fas fa-mobile-screen-button"></i>
-                <span>Mobile Applications</span>
-                </div>
-                <p class="services-content">As in modern world, mobile applications have become very significant.With languages such as html, css, js and python, I build smart applications with responsive layouts.</p>
-            </div>
-              <div class="services-card">
-                <div class="services-title">
-                <i class="fa-solid fa-lock"></i>
-                <span>Account Security</span>
-                </div>
-              <p class="services-content">
-              I help improve website and account security by applying secure coding practices, and vulnerability awareness.With expertise in python, I protect privacy from hackers and also track them in case you have been hacked.
+             <h3 class="card-title fade-up"> Responsive Websites</h3>
+             </div>
+              <p class="services-content fade-up">
+                Build fast, responsive and modern websites using the latest web web technologies.
+                Modern websites built with HTML, CSS and JavaScript.
               </p>
+              <ul class="services-features fade-up">
+                <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Responsive Design
+                </li>
+                <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Fast Performance
+                </li>
+                <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Clean Code
+                </li>
+                 <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Mobile Friendly
+              </li>
+              <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Secure
+              </li>
+            </ul>
+            <a href="#"class="card-button">
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            </div>
+              <div class="services-card slide-right">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                <div class="card-icon">
+                <i class="fas fa-mobile-screen-button fade-up services-icon"></i>
+                </div>
+               <h3 class="card-title fade-up"> Mobile Applications</h3>
+               </div>
+                <p class="services-content fade-up">Builds smart gaming applications, tracking systems and modern mobile solutions.</p>
+                <ul class="services-features fade-up">
+                   <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  Responsive
+                </li>
+                 <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  Fast Speed
+                </li>
+                 <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  Interactive
+                </li>
+                 <li>
+                  <i class="fa-solid fa-check-circle"></i>
+                  User-Friendly
+                </li>
+              </ul>
+              <a href="#"class="card-button">
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            </div>
+              <div class="services-card slide-left">
+                <div class="card-glow"></div>
+                <div class="card-header">
+                 <div class="card-icon">
+                <i class="fa-solid fa-lock fade-up services-icon"></i>
+                </div>
+                <h3 class="card-title fade-up">Website Optimization </h3>
+                </div>
+              <p class="services-content fade-up">
+              Improving speed, Performance and overrall website security.
+              </p>
+              <ul class="services-features fade-up">
+                 <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Faster Loading
+              </li>
+               <li>
+                <i class="fa-solid fa-check-circle"></i>
+                SEO Friendly
+              </li>
+               <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Better Performance
+            </li>
+             <li>
+                <i class="fa-solid fa-check-circle"></i>
+                Improved Experience
+              </li>
+            </ul>
+            <a href="#"class="card-button">
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-          <div class="services-card">
-            <div class="services-title">
-            <i class="fa-solid fa-palette"></i>
-            <span>Graphic Design</span>
+          <div class="services-card slide-right">
+            <div class="card-glow"></div>
+            <div class="card-header">
+             <div class="card-icon">
+            <i class="fa-solid fa-palette fade-up services-icon"></i>
             </div>
-            <p class="services-content">I started as a graphic designer, creating logos, posters, banners and flyers.This sparked my interest for technology and digital creation.</p>
+           <h3 class="card-title fade-up"> UI/UX Design</h3>
+           </div>
+            <p class="services-content fade-up">
+              Designing interfaces that are beautiful, easy to use and focused on user experiences.
+            </p>
+            <ul class="services-features fade-up">
+               <li>
+              <i class="fa-solid fa-check-circle"></i>
+              User-Friendly Layouts
+            </li>
+             <li>
+              <i class="fa-solid fa-check-circle"></i>
+              Modern Interfaces
+            </li>
+             <li>
+              <i class="fa-solid fa-check-circle"></i>
+              Accesibility
+            </li>
+            </ul>
+            <a href="#"class="card-button">
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
          </section>
 
          <!--CONTACT SECTION LAYOUT-->
 
          <section class="contact"id="contact">
-          <h2>My Contact </h2>
+          <h2 class="fade-up">Get In Touch </h2>
+          <p class="fade-up">Reach out directly and let us build something beautiful together</p>
+          <p class="message slide-right">
+            Send A Message
+            </p>
           <div class="contact-container">
-          <p class="emails">
-            <div class="contact-card">
+            <p class="emails">
+            <form 
+            id="contact-form"
+            class="contact-form">
+              <input type="text" name="from_name" class="contact-input slide-left"placeholder="Your Name" required><br><br>
+              <input type="email" name="from_email" class="contact-input slide-right"placeholder="Your Email*" required><br><br>
+              <input type="text" name="subject" class="contact-input slide-left"placeholder="Your Number" required><br><br>
+              <textarea placeholder="Your Message*" name="message" class="contact-input" required></textarea><br><br>
+              <button class="btn fade-up"type="submit" id="send-btn">Submit</button>
+            </form>
+            <p class="emails">
+              <p class="message reveal">Or Reach Out Directly</p>
+            <div class="contact-card slide-left">
               <i class="fas fa-envelope"></i>
-              <p>abdulnasirurazak@gmail.com</p>
+              <h3>Email</h3>
               <a href="mailto:abdulnasirurazak@gmail.com">Send email</a>
               </div>
-            <div class="contact-card">
+            <div class="contact-card slide-right">
               <i class="fab fa-whatsapp"></i>
-              <p>wa.me</p>
-              <a href="wa.me">Click to WhatsApp</a>
+              <p>CHATOUT</p>
+              <a href="https://wa.link/6vp4y3">Click to WhatsApp</a>
             </div>
-            <div class="contact-card">
+            <div class="contact-card slide-left">
               <i class="fas fa-phone"></i>
               <p>0593916202</p>
               <a href="tel:+233593916202">Call directly</a>
             </div></p>
-            <p>
-            <div class="subtitle">Fill out the form and I will be in  touch soon!</div>
-            <h3>How can I help you?</h3>
-            </p>
-            <p class="emails">
-            <form 
-            action="https://formsubmit.co/abdulnasirurazak@gmail.com"
-            method="POST"
-            class="contact-form">
-              <input type="text"placeholder="Your Name"><br><br>
-              <input type="email"placeholder="Your Email*"><br><br>
-              <input type="text"placeholder="Your Number"><br><br>
-              <textarea placeholder="Your Message*"></textarea><br><br>
-              <button class="btn"type="submit">Send message</button>
-            </form>
           </div></div>
          </section>
+
+         <!--FOOTER-->
+
          <section class="footer">
          <footer>
-          <h3>© 2026 | Abdul Nasiru Razak</h3>
-          <p class="connect">
+          <p class="connect fade-up">
             Let's Connect Here 
             </p>
-          <p>
+          <p class="hero-icons slide-right">
             <i class="fab fa-facebook"></i><br><br>
             <i class="fab fa-square-instagram"></i><br><br>
             <i class="fa-brands fa-linkedin"></i><br><br>
             <i class="fa-brands fa-github"></i><br><br>
           </p>
+          <p class="copyright">Copyright © 2026 Abdul Nasiru Razak. All right reserved.
+          </p>
         </footer>
+        <button class="fas fa-arrow-up"id="top-btn"></button>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
