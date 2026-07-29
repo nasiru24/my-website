@@ -148,31 +148,6 @@ async function runTerminal() {
 }
 runTerminal();
 
-/*
-const cursor=document.querySelector(".cursor");
-const text=command.dataset.text;
-let i=0;
-function typeCommand(){
-    if(i<text.length){
-        command.textContent+=text.charAt(i);
-        i++;
-        setTimeout(typeCommand, 100);
-    }else{revealLines();}
-}
-
-function revealLines(){
-
-const lines=document.querySelectorAll(".terminal-line.hidden");
-lines.forEach((line,index)=>{
-    setTimeout(()=>{
-        line.classList.remove("hidden");
-        line.classList.add("show");
-    }, (index+1)*900);
-});
-}
-typeCommand();
-*/
-
 const scroll=document.querySelector(".scroll-indicator");
 if(scroll){
     scroll.addEventListener("click",()=>{
