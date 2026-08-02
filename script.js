@@ -350,6 +350,7 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     /*TYPING EFFECTS*/
 
     const words=[
+        "Mathematics Student",
         "Software Developer",
         "Data Engineer",
         "AI Developer",
