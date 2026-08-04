@@ -290,6 +290,62 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     });
 
 
+    //PROJECTS CARD TILT
+
+    const projectsTilt=document.querySelectorAll(".card");
+
+            function updateCard(tilt,clientX,clientY){
+            const rect=tilt.getBoundingClientRect();
+            const x=clientX-rect.left;
+            const y=clientY-rect.top;
+            tilt.style.setProperty("--x", `${x}px`);
+            tilt.style.setProperty("--y", `${y}px`);
+            const rotateY=((x/rect.width)-0.5)*18;
+            const rotateX=((y/rect.height)-0.5)*-18;
+            tilt.style.transform=`
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            scale(1.03)
+            `;
+            const image=tilt.querySelector(".project-image");
+            if(image){
+                image.style.transform=`
+                translate(${rotateY*2}px,${rotateX*-2}px)
+                scale(1.08)`;
+            } 
+            }
+        function resetCard(tilt){
+            tilt.style.transform=
+            `perspective(1000px)
+             rotateX(0deg) 
+            rotateY(0deg) 
+            scale(1)`;
+        const image=tilt.querySelector(".project-image");
+        if(image){
+            image.style.transform=`translate(0px,0px) scale(1)`;
+        }
+    }
+    projectsTilt.forEach(tilt=>{
+        tilt.addEventListener("mousemove",(e)=>{
+            updateCard(tilt,e.clientX,e.clientY);
+        });
+        tilt.addEventListener("mouseleave",()=>{
+            resetCard(tilt);
+        });
+    });
+    projectsTilt.forEach(tilt=>{
+        tilt.addEventListener("touchmove",(e)=>{
+            const touch=e.touches[0];
+            updateCard(tilt,touch.clientX,touch.clientY);
+        },{passive:true});
+        tilt.addEventListener("touchend",()=>{
+            resetCard(tilt);
+        });
+    });
+
+    //SERVICES CARD REVEAL
+
     window.addEventListener("scroll",()=>{
         servicesCards.forEach(card=>{
             const cardTop=card.getBoundingClientRect().top;
