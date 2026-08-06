@@ -294,7 +294,7 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
 
     const projectsTilt=document.querySelectorAll(".card");
 
-            function updateCard(tilt,clientX,clientY){
+            function updateTilt(tilt,clientX,clientY){
             const rect=tilt.getBoundingClientRect();
             const x=clientX-rect.left;
             const y=clientY-rect.top;
@@ -308,6 +308,27 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
             rotateY(${rotateY}deg)
             scale(1.03)
             `;
+            const projectsTitle=tilt.querySelector(".project-title");
+            const content=tilt.querySelector(".project-content");
+            const tech=tilt.querySelector(".tech-stack");
+            const projectsButton=tilt.querySelector(".project-buttons");
+        
+            if(projectsTitle){
+                projectsTitle.style.transform=`
+                translateZ(80px) translate(${rotateY*0.5}px,${-rotateX*0.5}px)`;
+            }
+            if(content){
+                content.style.transform=`
+                translateZ(55px) translate(${rotateY}px,${-rotateX}px)`;
+                if(tech){
+                    tech.style.transform=`
+                    translateZ(90px) translate(${rotateY*1.2}px,${-rotateX*1.2}px)`;
+                    if(projectsButton){
+                        projectsButton.style.transform=`
+                        translateZ(120px) translate(${rotateY*1.5}px,${-rotateX*1.5}px)`;
+                    }
+                }
+            }
             const image=tilt.querySelector(".project-image");
             if(image){
                 image.style.transform=`
@@ -315,12 +336,31 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
                 scale(1.08)`;
             } 
             }
-        function resetCard(tilt){
+        function resetTilt(tilt){
             tilt.style.transform=
             `perspective(1000px)
              rotateX(0deg) 
             rotateY(0deg) 
             scale(1)`;
+
+            const projectsTitle=tilt.querySelector(".project-title");
+            const content=tilt.querySelector(".project-content");
+            const tech=tilt.querySelector(".tech-stack");
+            const projectsButton=tilt.querySelector(".project-buttons");
+
+            if(projectsTitle){
+                projectsTitle.style.transform="translateZ(80px)";
+            }
+            if(content){
+                content.style.transform="translateZ(55px)";
+            }
+            if(tech){
+                tech.style.transform="translateZ(90px)";
+            }
+            if(projectsButton){
+                projectsButton.style.transform="translateZ(120px)";
+            }
+
         const image=tilt.querySelector(".project-image");
         if(image){
             image.style.transform=`translate(0px,0px) scale(1)`;
@@ -328,19 +368,19 @@ document.querySelectorAll(".nav-link").forEach(n=>n.
     }
     projectsTilt.forEach(tilt=>{
         tilt.addEventListener("mousemove",(e)=>{
-            updateCard(tilt,e.clientX,e.clientY);
+            updateTilt(tilt,e.clientX,e.clientY);
         });
         tilt.addEventListener("mouseleave",()=>{
-            resetCard(tilt);
+            resetTilt(tilt);
         });
     });
     projectsTilt.forEach(tilt=>{
         tilt.addEventListener("touchmove",(e)=>{
             const touch=e.touches[0];
-            updateCard(tilt,touch.clientX,touch.clientY);
+            updateTilt(tilt,touch.clientX,touch.clientY);
         },{passive:true});
         tilt.addEventListener("touchend",()=>{
-            resetCard(tilt);
+            resetTilt(tilt);
         });
     });
 
