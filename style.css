@@ -1284,8 +1284,8 @@ h2{
     overflow: hidden;
     gap: 20px;
     transition: 
-     transform 0.2s linear,
-     box-shadow 0.8s ease;
+     transform 0.45s cubic-bezier(0.22,1,0.36,1),
+     box-shadow 0.35s ease;
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.4),
      0 0 40px rgba(24,240,208,0.05);
@@ -1325,8 +1325,9 @@ h2{
 
 .card:hover{
     transform: translateY(-12px) scale(1.05);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5),
-    0 0 50px rgba(24,240,208,0.3),
+    box-shadow:
+     0 25px 60px rgba(0,0,0,0.5),
+    0 0 50px #18f0d04d,
     0 0 90px rgba(24,240,208,0.15);
     animation-play-state: paused;
 }
@@ -1334,6 +1335,93 @@ h2{
     opacity: 1;
     transform: translateY(0);
 }
+
+.card-spotlight{
+    position:absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(
+        220px circle at var(--x) var(--y),
+        rgba(255,255,255,0.18)
+        transparent 70%
+    );
+    z-index: 3;
+}
+
+.card:hover .card-spotlight{
+    opacity: 1;
+}
+
+.energy-core{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 14px;
+    height: 14px;
+    z-index: 30;
+}
+.energy-core span{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: green;
+    box-shadow: inset0 0 10px #18f0d0,
+    0 0 30px #18f0d0,
+    0 0 60px rgba(24,240,208,0.4);
+    animation: corePulse 2s ease-in-out infinite;
+
+}
+
+@keyframes corePulse{
+    0%{transform: scale(0.8);
+    opacity: 0.6;}
+    50%{transform: scale(1.5);
+    opacity: 1;}
+    100%{transform: scale(0.8);
+    opacity: 0.6;}
+
+}
+
+.card-data{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.card-data span{
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(
+        transparent,#18f0d0,transparent
+    );
+    opacity: 0.3;
+    animation: dataFlow 4s linear infinite;
+}
+
+@keyframes dataFlow{
+    from{transform: translateY(-100px);}
+    to{transform: translateY(400px);}
+}
+
+.card-data span:nth-child(1){
+    left: 18%;
+    animation-delay: 0s;
+}
+.card-data span:nth-child(2){
+    left: 52%;
+    animation-delay: 1s;
+}
+.card-data span:nth-child(3){
+    left: 82%;
+    animation-delay: 2s;
+}
+
+
 
 .project-image{
     width: 100%;
@@ -1439,20 +1527,28 @@ h2{
 
 
 .tech-stack span{
-    padding: 8px 5px;
+    padding: 8px 10px;
     border-radius: 30px;
     background: rgba(24,240,208,0.15);
     border: 1px solid rgba(24,240,208,0.35);
     color: #18f0d0;
     font-size: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
     text-align: center;
-    transform: 0.4s;
+    transform: translateY(25px);
+    opacity: 0;
+    transition: 
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    box-shadow 0.3s;
 }
 
 .card:hover .tech-stack span{
-    transform: translateY(-8px);
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .card:hover .tech-stack span:nth-child(1){
@@ -1464,7 +1560,15 @@ h2{
 }
 
 .card:hover .tech-stack span:nth-child(3){
-    transition-delay: 0.2s;
+    transition-delay: 0.20s;
+}
+
+.tech-stack span:hover{
+    background: #18f0d0;
+    color: #081018;
+    box-shadow:
+    0 0 20px #18f0d0,
+    0 0 40px rgba(24,240,208,0.4) ;
 }
 
 .project-content p{
@@ -1525,7 +1629,7 @@ h2{
     transform: translateY(-6px);
 }
 
-a.btn{
+.project-buttons .btn{
     flex: 1;
     border-radius: 25px;
     padding: 14px 15px;
@@ -1564,6 +1668,78 @@ a.btn{
 .fa-pen-to-square{
     color: white;
     font-size: 20px;
+}
+
+.card-border{
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 0deg,
+        transparent,#18f0d0,
+        #3aa8ff,#18f0d0,transparent
+    );
+    opacity: 0;
+    transition: 0.4s;
+    animation: borderSpin 4s linear infinite;
+    z-index: 0;
+}
+.card-border::before{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: inherit;
+    background: #081018;
+}
+
+.card:hover .card-border{
+    opacity: 1;
+}
+
+@keyframes borderSpin{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.card-particles{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.card-particles::before,
+.card-particles::after{
+    content: "";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius: 50%;
+    background: #18f0d0;
+    opacity: 0;
+}
+.card-particles::before{
+    left: 18%;
+    bottom: 15%;
+}
+.card-particles::after{
+    right: 18%;
+    bottom:12%;
+}
+.card:hover .card-particles::before{
+    animation: particleFloat 2s infinite;
+}
+.card:hover .card-particles::after{
+    animation: particleFloat 2.4s infinite 0.4s;
+}
+
+@keyframes particleFloat{
+    0%{transform: translateY(0) scale(0.4);
+    opacity: 0;}
+    20%{opacity: 1;}
+    80%{opacity: 0.9;}
+    100%{transform: translateY(-170px) scale(1.6);
+    opacity: 0;}
 }
 
 
@@ -1708,11 +1884,7 @@ a.btn{
     inset: 0;
     border-radius: 25px;
     background:linear-gradient(
-        135deg,#00f5d4,#3b82f6,#8b5cf6,#00f5d4);
-        padding: 2px;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+        135deg,#00f5d4,#3b82f6,#8b5cf6);
     -webkit-mask-composite:xor;
     mask-composite: exclude;
     opacity: 0;
@@ -1950,6 +2122,7 @@ a.btn{
 
 input,textarea{
     width: 100%;
+    color: whitesmoke;
     border: 1px solid #ddd;
     border-radius: 7px;
     margin: auto;
@@ -1985,6 +2158,7 @@ textarea{
 input{
     margin:auto;
     min-height: 60px;
+    color: whitesmoke;
 }
 
 form .btn{
@@ -2305,7 +2479,6 @@ form .btn:hover{
     0 0 30px rgba(0,255,255,0.08);
     width:min(90%,380px);
     min-height: calc(100vh-70px);
-    transition:right 0.4s ease;
     z-index: 999;
     font-size: 30px;
     font-weight: 600;
